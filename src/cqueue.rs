@@ -37,6 +37,7 @@ pub trait EntryMarker: Clone + Debug + Into<Entry> + private::Sealed {
 }
 
 /// A 16-byte completion queue entry (CQE), representing a complete I/O operation.
+#[derive(Default)]
 #[repr(C)]
 pub struct Entry(pub(crate) sys::io_uring_cqe);
 
